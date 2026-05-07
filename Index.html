@@ -2,7 +2,9 @@
 <html lang="no">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Shortcut IT Support</title>
+
     <link rel="stylesheet" href="style.css">
     <script src="script.js" defer></script>
 </head>
@@ -12,61 +14,90 @@
     <main class="dokument">
 
         <section id="startside">
+
             <h1>Shortcut IT Support</h1>
 
             <p>
-                Velkommen til den interne IT-portalen for Shortcut IT Support.
+                Intern portal for dokumentasjon og brukerstøtte.
             </p>
 
-            <p>
-                Her kan ansatte finne informasjon om serveren, nettverket og brukerstøtte.
-            </p>
-
-            <button id="tilInfo">
-                Åpne dokumentasjon
+            <button id="prosjektKnapp">
+                Prosjekt
             </button>
+
+            <button id="ipKnapp">
+                IP-plan
+            </button>
+
         </section>
 
-        <section id="infoSide" hidden>
-            <h1>Dokumentasjon</h1>
+        <section id="prosjektSide" hidden>
 
-            <h2>Prosjekt</h2>
+            <h1>Prosjekt</h1>
 
             <p>
                 Dette prosjektet handler om å sette opp en intern IT-løsning for bedriften Shortcut IT Support.
             </p>
 
             <p>
-                Løsningen består av Windows Server, Active Directory, DNS, DHCP, IIS og en intern nettside.
-            </p>
-
-            <h2>Server</h2>
-
-            <p>
-                Servernavnet er SRV-SHORTCUT01.
+                Målet med prosjektet er å lage en løsning som gir ansatte tilgang til innlogging, nettverkstjenester og intern dokumentasjon.
             </p>
 
             <p>
-                Domenet heter shortcut.local.
+                Løsningen består av Windows Server 2022 med Active Directory, DNS, DHCP og IIS.
             </p>
 
             <p>
-                Serveren har IP-adressen 192.168.20.10.
-            </p>
-
-            <h2>Brukerstøtte</h2>
-
-            <p>
-                Denne nettsiden brukes som dokumentasjon for ansatte og IT-ansvarlige.
+                Jeg har satt opp et eget domene kalt shortcut.local og konfigurert serveren med statisk IP-adresse.
             </p>
 
             <p>
-                Her kan ansatte finne informasjon om hvordan systemet er satt opp og hvor de kan få hjelp.
+                Nettsiden hostes med IIS og brukes som en intern portal for brukerstøtte og dokumentasjon.
             </p>
 
-            <button id="tilbake">
-                Tilbake til startside
+            <button id="tilbakeProsjekt">
+                Tilbake
             </button>
+
+        </section>
+
+        <section id="ipSide" hidden>
+
+            <h1>IP-plan</h1>
+
+            <table>
+
+                <tr>
+                    <th>Enhet</th>
+                    <th>IP-adresse</th>
+                </tr>
+
+                <tr>
+                    <td>Gateway</td>
+                    <td>192.168.20.1</td>
+                </tr>
+
+                <tr>
+                    <td>Windows Server</td>
+                    <td>192.168.20.10</td>
+                </tr>
+
+                <tr>
+                    <td>DNS</td>
+                    <td>192.168.20.10</td>
+                </tr>
+
+                <tr>
+                    <td>DHCP Range</td>
+                    <td>192.168.20.100 - 192.168.20.180</td>
+                </tr>
+
+            </table>
+
+            <button id="tilbakeIp">
+                Tilbake
+            </button>
+
         </section>
 
     </main>

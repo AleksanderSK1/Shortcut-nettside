@@ -1,15 +1,34 @@
 let startside = document.getElementById("startside");
-let infoSide = document.getElementById("infoSide");
 
-let tilInfo = document.getElementById("tilInfo");
-let tilbake = document.getElementById("tilbake");
+let prosjektSide = document.getElementById("prosjektSide");
+let ipSide = document.getElementById("ipSide");
 
-tilInfo.onclick = function () {
+let prosjektKnapp = document.getElementById("prosjektKnapp");
+let ipKnapp = document.getElementById("ipKnapp");
+
+let tilbakeProsjekt = document.getElementById("tilbakeProsjekt");
+let tilbakeIp = document.getElementById("tilbakeIp");
+
+prosjektKnapp.onclick = function () {
+
     startside.hidden = true;
-    infoSide.hidden = false;
+    prosjektSide.hidden = false;
 };
 
-tilbake.onclick = function () {
-    infoSide.hidden = true;
+ipKnapp.onclick = function () {
+
+    startside.hidden = true;
+    ipSide.hidden = false;
+};
+
+tilbakeProsjekt.onclick = function () {
+
+    prosjektSide.hidden = true;
+    startside.hidden = false;
+};
+
+tilbakeIp.onclick = function () {
+
+    ipSide.hidden = true;
     startside.hidden = false;
 };
