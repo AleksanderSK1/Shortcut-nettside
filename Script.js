@@ -1,43 +1,35 @@
 let startside = document.getElementById("startside");
-let problemSide = document.getElementById("problemSide");
-let systemSide = document.getElementById("systemSide");
+let supportSide = document.getElementById("supportSide");
 let ipSide = document.getElementById("ipSide");
 
-let problemKnapp = document.getElementById("problemKnapp");
-let systemKnapp = document.getElementById("systemKnapp");
+let supportKnapp = document.getElementById("supportKnapp");
 let ipKnapp = document.getElementById("ipKnapp");
-
-let losningKnapp = document.getElementById("losningKnapp");
-let problem = document.getElementById("problem");
-let svar = document.getElementById("svar");
 
 let tilbakeKnapper = document.getElementsByClassName("tilbakeKnapp");
 
-function skjulAlleSider() {
+let problem = document.getElementById("problem");
+let losningKnapp = document.getElementById("losningKnapp");
+let svar = document.getElementById("svar");
+
+function skjulSider() {
     startside.hidden = true;
-    problemSide.hidden = true;
-    systemSide.hidden = true;
+    supportSide.hidden = true;
     ipSide.hidden = true;
 }
 
-problemKnapp.onclick = function () {
-    skjulAlleSider();
-    problemSide.hidden = false;
-};
-
-systemKnapp.onclick = function () {
-    skjulAlleSider();
-    systemSide.hidden = false;
+supportKnapp.onclick = function () {
+    skjulSider();
+    supportSide.hidden = false;
 };
 
 ipKnapp.onclick = function () {
-    skjulAlleSider();
+    skjulSider();
     ipSide.hidden = false;
 };
 
 for (let i = 0; i < tilbakeKnapper.length; i++) {
     tilbakeKnapper[i].onclick = function () {
-        skjulAlleSider();
+        skjulSider();
         startside.hidden = false;
     };
 }

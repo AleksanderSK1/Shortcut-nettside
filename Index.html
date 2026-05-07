@@ -11,115 +11,112 @@
 
     <header>
         <h1>Shortcut IT Support</h1>
-        <p>Intern brukerstøtteportal for ansatte</p>
+        <p>Intern supportportal for ansatte</p>
     </header>
 
     <main>
 
         <section id="startside" class="side">
 
-            <h2>Hva trenger du hjelp med?</h2>
+            <h2>Hvordan kan vi hjelpe?</h2>
 
-            <p>
-                Her kan ansatte finne hjelp med innlogging, nettverk, IP-adresse og tilgang til interne systemer.
+            <p class="intro">
+                Her finner ansatte informasjon om nettverk, server og interne IT-tjenester.
             </p>
 
-            <nav>
-                <button id="problemKnapp">Vanlige problemer</button>
-                <button id="systemKnapp">Systeminformasjon</button>
-                <button id="ipKnapp">IP-plan</button>
-            </nav>
+            <div class="kortOmrade">
 
-            <article>
+                <article class="kort">
+                    <h3>Brukerstøtte</h3>
+                    <p>Åpne dokumentasjon og enkel feilsøking.</p>
+
+                    <button id="supportKnapp">
+                        Åpne brukerstøtte
+                    </button>
+                </article>
+
+                <article class="kort">
+                    <h3>IP-plan</h3>
+                    <p>Se de viktigste nettverksadressene.</p>
+
+                    <button id="ipKnapp">
+                        Åpne IP-plan
+                    </button>
+                </article>
+
+            </div>
+
+            <section class="status">
                 <h3>Status</h3>
-
-                <p>
-                    Supportportalen kjører på Windows Server med IIS.
-                </p>
-
-                <p>
-                    Siden kan nås internt med adressen support.shortcut.local.
-                </p>
-            </article>
+                <p>Supportportalen kjører på Windows Server med IIS.</p>
+                <p>Intern adresse: support.shortcut.local</p>
+            </section>
 
         </section>
 
-        <section id="problemSide" class="side" hidden>
+        <section id="supportSide" class="side" hidden>
 
-            <h2>Vanlige problemer</h2>
+            <button class="tilbakeKnapp">
+                Tilbake
+            </button>
 
-            <label for="problem">Velg problem:</label>
+            <h2>Brukerstøtte og dokumentasjon</h2>
 
-            <select id="problem">
-                <option value="">Velg problem</option>
-                <option value="nettside">Jeg kommer ikke inn på nettsiden</option>
-                <option value="ip">Jeg har ikke riktig IP-adresse</option>
-                <option value="innlogging">Jeg får ikke logget inn</option>
-                <option value="dns">Domenenavnet fungerer ikke</option>
-            </select>
+            <article class="dokumenttekst">
+Dette er den interne dokumentasjonen for Shortcut IT Support.
 
-            <button id="losningKnapp">Vis løsning</button>
+Løsningen er satt opp med Windows Server 2022. Serveren brukes til sentrale tjenester i nettverket, blant annet Active Directory, DNS, DHCP og IIS.
 
-            <article id="svar">
-                <p>Velg et problem for å se forslag til løsning.</p>
+Servernavnet er SRV-SHORTCUT01. Domenet heter shortcut.local. Serveren har statisk IP-adresse 192.168.20.10.
+
+DNS er satt opp slik at ansatte kan åpne supportsiden med support.shortcut.local i stedet for å skrive IP-adressen manuelt.
+
+IIS brukes til å hoste denne nettsiden. Nettsiden fungerer som en intern supportportal der ansatte kan finne informasjon om IT-systemet.
+
+SSH er satt opp slik at serveren kan administreres fra MacBook. Dette gjør det mulig å oppdatere nettsiden mer effektivt uten å kopiere filer manuelt.
+
+På eksamensdagen kan denne siden oppdateres underveis med det som blir gjort i serveroppsettet.
             </article>
 
-            <button class="tilbakeKnapp">Tilbake</button>
+            <article class="problemBoks">
+                <h3>Feilsøking</h3>
 
-        </section>
+                <p>Velg et problem:</p>
 
-        <section id="systemSide" class="side" hidden>
+                <select id="problem">
+                    <option value="">Velg problem</option>
+                    <option value="nettside">Nettsiden fungerer ikke</option>
+                    <option value="ip">Feil IP-adresse</option>
+                    <option value="innlogging">Innlogging fungerer ikke</option>
+                    <option value="dns">Domenenavnet fungerer ikke</option>
+                </select>
 
-            <h2>Systeminformasjon</h2>
+                <button id="losningKnapp">
+                    Vis løsning
+                </button>
 
-            <article>
-                <h3>Server</h3>
-
-                <p>
-                    Servernavn: SRV-SHORTCUT01
-                </p>
-
-                <p>
-                    Domene: shortcut.local
-                </p>
-
-                <p>
-                    Server-IP: 192.168.20.10
-                </p>
+                <div id="svar"></div>
             </article>
-
-            <article>
-                <h3>Tjenester</h3>
-
-                <p>
-                    Active Directory brukes til brukere og grupper.
-                </p>
-
-                <p>
-                    DNS brukes for interne navn som support.shortcut.local.
-                </p>
-
-                <p>
-                    IIS brukes til å hoste denne supportportalen.
-                </p>
-
-                <p>
-                    SSH brukes for å administrere serveren fra MacBook.
-                </p>
-            </article>
-
-            <button class="tilbakeKnapp">Tilbake</button>
 
         </section>
 
         <section id="ipSide" class="side" hidden>
+
+            <button class="tilbakeKnapp">
+                Tilbake
+            </button>
 
             <h2>IP-plan</h2>
 
             <table>
                 <tr>
                     <th>Område</th>
-                    <th>Adresse</th>
+                    <th>Verdi</th>
+                </tr>
+
+                <tr>
+                    <td>Nettverk</td>
+                    <td>192.168.20.0/24</td>
                 </tr>
 
                 <tr>
@@ -138,7 +135,12 @@
                 </tr>
 
                 <tr>
-                    <td>Nettside</td>
+                    <td>Domene</td>
+                    <td>shortcut.local</td>
+                </tr>
+
+                <tr>
+                    <td>Supportside</td>
                     <td>support.shortcut.local</td>
                 </tr>
 
@@ -147,8 +149,6 @@
                     <td>192.168.20.100 - 192.168.20.180</td>
                 </tr>
             </table>
-
-            <button class="tilbakeKnapp">Tilbake</button>
 
         </section>
 
