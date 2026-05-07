@@ -1,75 +1,125 @@
 <!DOCTYPE html>
-<html lang="no">
+<html>
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Shortcut IT Support</title>
-
     <link rel="stylesheet" href="style.css">
     <script src="script.js" defer></script>
 </head>
 
 <body>
 
-    <main class="dokument">
+    <header>
+        <h1>Shortcut IT Support</h1>
+        <p>Intern brukerstøtteportal for ansatte</p>
+    </header>
 
-        <section id="startside">
+    <main>
 
-            <h1>Shortcut IT Support</h1>
+        <section id="startside" class="side">
+
+            <h2>Hva trenger du hjelp med?</h2>
 
             <p>
-                Intern portal for dokumentasjon og brukerstøtte.
+                Her kan ansatte finne hjelp med innlogging, nettverk, IP-adresse og tilgang til interne systemer.
             </p>
 
-            <button id="prosjektKnapp">
-                Prosjekt
-            </button>
+            <nav>
+                <button id="problemKnapp">Vanlige problemer</button>
+                <button id="systemKnapp">Systeminformasjon</button>
+                <button id="ipKnapp">IP-plan</button>
+            </nav>
 
-            <button id="ipKnapp">
-                IP-plan
-            </button>
+            <article>
+                <h3>Status</h3>
+
+                <p>
+                    Supportportalen kjører på Windows Server med IIS.
+                </p>
+
+                <p>
+                    Siden kan nås internt med adressen support.shortcut.local.
+                </p>
+            </article>
 
         </section>
 
-        <section id="prosjektSide" hidden>
+        <section id="problemSide" class="side" hidden>
 
-            <h1>Prosjekt</h1>
+            <h2>Vanlige problemer</h2>
 
-            <p>
-                Dette prosjektet handler om å sette opp en intern IT-løsning for bedriften Shortcut IT Support.
-            </p>
+            <label for="problem">Velg problem:</label>
 
-            <p>
-                Målet med prosjektet er å lage en løsning som gir ansatte tilgang til innlogging, nettverkstjenester og intern dokumentasjon.
-            </p>
+            <select id="problem">
+                <option value="">Velg problem</option>
+                <option value="nettside">Jeg kommer ikke inn på nettsiden</option>
+                <option value="ip">Jeg har ikke riktig IP-adresse</option>
+                <option value="innlogging">Jeg får ikke logget inn</option>
+                <option value="dns">Domenenavnet fungerer ikke</option>
+            </select>
 
-            <p>
-                Løsningen består av Windows Server 2022 med Active Directory, DNS, DHCP og IIS.
-            </p>
+            <button id="losningKnapp">Vis løsning</button>
 
-            <p>
-                Jeg har satt opp et eget domene kalt shortcut.local og konfigurert serveren med statisk IP-adresse.
-            </p>
+            <article id="svar">
+                <p>Velg et problem for å se forslag til løsning.</p>
+            </article>
 
-            <p>
-                Nettsiden hostes med IIS og brukes som en intern portal for brukerstøtte og dokumentasjon.
-            </p>
-
-            <button id="tilbakeProsjekt">
-                Tilbake
-            </button>
+            <button class="tilbakeKnapp">Tilbake</button>
 
         </section>
 
-        <section id="ipSide" hidden>
+        <section id="systemSide" class="side" hidden>
 
-            <h1>IP-plan</h1>
+            <h2>Systeminformasjon</h2>
+
+            <article>
+                <h3>Server</h3>
+
+                <p>
+                    Servernavn: SRV-SHORTCUT01
+                </p>
+
+                <p>
+                    Domene: shortcut.local
+                </p>
+
+                <p>
+                    Server-IP: 192.168.20.10
+                </p>
+            </article>
+
+            <article>
+                <h3>Tjenester</h3>
+
+                <p>
+                    Active Directory brukes til brukere og grupper.
+                </p>
+
+                <p>
+                    DNS brukes for interne navn som support.shortcut.local.
+                </p>
+
+                <p>
+                    IIS brukes til å hoste denne supportportalen.
+                </p>
+
+                <p>
+                    SSH brukes for å administrere serveren fra MacBook.
+                </p>
+            </article>
+
+            <button class="tilbakeKnapp">Tilbake</button>
+
+        </section>
+
+        <section id="ipSide" class="side" hidden>
+
+            <h2>IP-plan</h2>
 
             <table>
-
                 <tr>
-                    <th>Enhet</th>
-                    <th>IP-adresse</th>
+                    <th>Område</th>
+                    <th>Adresse</th>
                 </tr>
 
                 <tr>
@@ -83,20 +133,22 @@
                 </tr>
 
                 <tr>
-                    <td>DNS</td>
+                    <td>DNS-server</td>
                     <td>192.168.20.10</td>
                 </tr>
 
                 <tr>
-                    <td>DHCP Range</td>
-                    <td>192.168.20.100 - 192.168.20.180</td>
+                    <td>Nettside</td>
+                    <td>support.shortcut.local</td>
                 </tr>
 
+                <tr>
+                    <td>DHCP-område</td>
+                    <td>192.168.20.100 - 192.168.20.180</td>
+                </tr>
             </table>
 
-            <button id="tilbakeIp">
-                Tilbake
-            </button>
+            <button class="tilbakeKnapp">Tilbake</button>
 
         </section>
 
