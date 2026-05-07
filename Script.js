@@ -1,9 +1,11 @@
 let startside = document.getElementById("startside");
-let supportSide = document.getElementById("supportSide");
+let dokumentasjonSide = document.getElementById("dokumentasjonSide");
 let ipSide = document.getElementById("ipSide");
+let feilSide = document.getElementById("feilSide");
 
-let supportKnapp = document.getElementById("supportKnapp");
+let dokumentasjonKnapp = document.getElementById("dokumentasjonKnapp");
 let ipKnapp = document.getElementById("ipKnapp");
+let feilKnapp = document.getElementById("feilKnapp");
 
 let tilbakeKnapper = document.getElementsByClassName("tilbakeKnapp");
 
@@ -13,18 +15,24 @@ let svar = document.getElementById("svar");
 
 function skjulSider() {
     startside.hidden = true;
-    supportSide.hidden = true;
+    dokumentasjonSide.hidden = true;
     ipSide.hidden = true;
+    feilSide.hidden = true;
 }
 
-supportKnapp.onclick = function () {
+dokumentasjonKnapp.onclick = function () {
     skjulSider();
-    supportSide.hidden = false;
+    dokumentasjonSide.hidden = false;
 };
 
 ipKnapp.onclick = function () {
     skjulSider();
     ipSide.hidden = false;
+};
+
+feilKnapp.onclick = function () {
+    skjulSider();
+    feilSide.hidden = false;
 };
 
 for (let i = 0; i < tilbakeKnapper.length; i++) {
@@ -37,19 +45,19 @@ for (let i = 0; i < tilbakeKnapper.length; i++) {
 losningKnapp.onclick = function () {
 
     if (problem.value === "nettside") {
-        svar.innerHTML = "<h3>Løsning</h3><p>Sjekk at du er koblet til riktig nettverk. Prøv deretter å åpne support.shortcut.local eller 192.168.20.10.</p>";
+        svar.innerHTML = "<h3>Løsning</h3><p>Sjekk at IIS kjører på serveren. Test først med http://192.168.20.10. Hvis IP fungerer, men domenenavnet ikke fungerer, er problemet sannsynligvis DNS.</p>";
     }
 
     else if (problem.value === "ip") {
-        svar.innerHTML = "<h3>Løsning</h3><p>Åpne terminal eller CMD og bruk ipconfig. Sjekk at maskinen har fått en IP-adresse i riktig nettverk.</p>";
+        svar.innerHTML = "<h3>Løsning</h3><p>Bruk ipconfig for å kontrollere IP-adresse, gateway og DNS-server. Klienter skal få IP fra DHCP-området, mens serveren skal ha statisk IP-adresse 192.168.20.10.</p>";
     }
 
     else if (problem.value === "innlogging") {
-        svar.innerHTML = "<h3>Løsning</h3><p>Sjekk brukernavn og passord. Kontakt IT hvis kontoen er låst eller passordet må tilbakestilles.</p>";
+        svar.innerHTML = "<h3>Løsning</h3><p>Sjekk at brukeren finnes i Active Directory, at passordet er riktig, og at kontoen ikke er låst. Hvis kontoen er låst, kan den låses opp i Active Directory Users and Computers.</p>";
     }
 
     else if (problem.value === "dns") {
-        svar.innerHTML = "<h3>Løsning</h3><p>Sjekk at DNS-serveren peker til 192.168.20.10. Domenenavnet support.shortcut.local peker til serveren.</p>";
+        svar.innerHTML = "<h3>Løsning</h3><p>Sjekk at klienten bruker 192.168.20.10 som DNS-server. Test deretter med nslookup support.shortcut.local. DNS-recorden skal peke til 192.168.20.10.</p>";
     }
 
     else {
