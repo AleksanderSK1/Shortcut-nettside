@@ -1,0 +1,29 @@
+body {
+    background-color: #dddddd;
+    font-family: Arial, sans-serif;
+}
+
+.dokument {
+    background-color: white;
+    width: 700px;
+    margin: 40px auto;
+    padding: 50px;
+    border: 1px solid #aaaaaa;
+}
+
+h1 {
+    text-align: center;
+}
+
+h2 {
+    margin-top: 30px;
+}
+
+p {
+    line-height: 1.6;
+}
+
+button {
+    padding: 10px 15px;
+    margin-top: 20px;
+}
