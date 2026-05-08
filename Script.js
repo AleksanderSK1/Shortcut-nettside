@@ -61,7 +61,7 @@ losningKnapp.onclick = function () {
     }
 
 
-    else if (problem.value === "Passord") {
+    else if (problem.value === "passord") {
         svar.innerHTML = "<h3>Løsning</h3><p> Sørg for at passord er 12 siffer eller lengre </p>";
     }
 
