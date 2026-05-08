@@ -60,7 +60,7 @@ losningKnapp.onclick = function () {
         svar.innerHTML = "<h3>Løsning</h3><p>Sjekk at klienten bruker 192.168.20.10 som DNS-server. Test deretter med nslookup support.shortcut.local. DNS-recorden skal peke til 192.168.20.10.</p>";
     }
 
-
+    
     else if (problem.value === "Passord") {
         svar.innerHTML = "<h3>Løsning</h3><p>Pass på at passord er 12 karakterer eller lengre </p>";
     }
