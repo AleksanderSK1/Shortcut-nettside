@@ -35,6 +35,7 @@ feilKnapp.onclick = function () {
     feilSide.hidden = false;
 };
 
+
 for (let i = 0; i < tilbakeKnapper.length; i++) {
     tilbakeKnapper[i].onclick = function () {
         skjulSider();
@@ -63,6 +64,10 @@ losningKnapp.onclick = function () {
 
     else if (problem.value === "passord") {
         svar.innerHTML = "<h3>Løsning</h3><p> Sørg for at passord er 12 siffer eller lengre </p>";
+    }
+
+    else if (problem.value === "Klarer ikke å koble til domenet") {
+        svar.innerHTML = "<h3>Løsning</h3><p> Dns miskonfigurasjon og / eller nettverksproblemer </p>";
     }
 
     else {
